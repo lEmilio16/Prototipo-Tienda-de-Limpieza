@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LimpioMax - Productos de Limpieza</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h1>LimpioMax</h1>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h2>Todo para la limpieza de tu hogar y negocio</h2>
+        <p>Cloro, detergentes, desinfectantes, aromatizantes y más.</p>
+
+        <a
+            href="https://wa.me/529991234567?text=Hola,%20quiero%20hacer%20un%20pedido"
+            target="_blank"
+            class="btn-whatsapp">
+            Pedir por WhatsApp
+        </a>
+    </section>
+
+    <section id="productos" class="productos">
+
+        <h2>Nuestros Productos</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600" alt="">
+                <h3>Cloro</h3>
+                <p>Desinfección profesional.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=600" alt="">
+                <h3>Detergente</h3>
+                <p>Alto poder de limpieza.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600" alt="">
+                <h3>Desinfectante</h3>
+                <p>Elimina bacterias y virus.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600" alt="">
+                <h3>Aromatizantes</h3>
+                <p>Ambientes frescos y agradables.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="ubicacion" class="ubicacion">
+
+        <h2>Encuéntranos</h2>
+
+        <div class="direccion-box">
+
+            <input
+                type="text"
+                id="direccion"
+                placeholder="Escribe una dirección">
+
+            <button onclick="buscarDireccion()">
+                Buscar Dirección
+            </button>
+
+        </div>
+
+        <iframe
+            id="mapa"
+            src="https://maps.google.com/maps?q=Villahermosa%20Tabasco&output=embed"
+            loading="lazy">
+        </iframe>
+
+    </section>
+
+    <section id="contacto" class="contacto">
+
+        <h2>Haz tu pedido ahora</h2>
+
+        <a
+            href="https://wa.me/529991234567?text=Hola,%20quiero%20cotizar%20productos%20de%20limpieza"
+            target="_blank"
+            class="btn-whatsapp">
+            Contactar por WhatsApp
+        </a>
+
+    </section>
+
+    <footer>
+        <p>© 2026 LimpioMax - Productos de Limpieza</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
