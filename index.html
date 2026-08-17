@@ -1,115 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LimpioMax - Productos de Limpieza</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LimpioMax · Productos de Limpieza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <h1>LimpioMax</h1>
+<header class="header">
+    <nav class="navbar">
+        <div class="marca">
+            <span class="marca-icono">🫧</span>
+            <h1 id="nombre-negocio">LimpioMax</h1>
+        </div>
 
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#ubicacion">Ubicación</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
 
-    <section id="inicio" class="hero">
-        <h2>Todo para la limpieza de tu hogar y negocio</h2>
-        <p>Cloro, detergentes, desinfectantes, aromatizantes y más.</p>
-
-        <a
-            href="https://wa.me/529991234567?text=Hola,%20quiero%20hacer%20un%20pedido"
-            target="_blank"
-            class="btn-whatsapp">
+        <button class="btn-whatsapp-directo btn-nav-whatsapp" type="button">
             Pedir por WhatsApp
-        </a>
-    </section>
+        </button>
+    </nav>
+</header>
 
-    <section id="productos" class="productos">
-
-        <h2>Nuestros Productos</h2>
-
-        <div class="grid">
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600" alt="">
-                <h3>Cloro</h3>
-                <p>Desinfección profesional.</p>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=600" alt="">
-                <h3>Detergente</h3>
-                <p>Alto poder de limpieza.</p>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600" alt="">
-                <h3>Desinfectante</h3>
-                <p>Elimina bacterias y virus.</p>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600" alt="">
-                <h3>Aromatizantes</h3>
-                <p>Ambientes frescos y agradables.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section id="ubicacion" class="ubicacion">
-
-        <h2>Encuéntranos</h2>
-
-        <div class="direccion-box">
-
-            <input
-                type="text"
-                id="direccion"
-                placeholder="Escribe una dirección">
-
-            <button onclick="buscarDireccion()">
-                Buscar Dirección
+<section id="inicio" class="hero">
+    <div class="hero-fondo" aria-hidden="true"></div>
+    <div class="hero-limpio" aria-hidden="true"></div>
+    <div class="hero-contenido">
+        <p class="hero-eyebrow">Limpieza para tu hogar y tu negocio</p>
+        <h2 id="eslogan-negocio">Todo para la limpieza de tu hogar y tu negocio</h2>
+        <p class="hero-sub">Cloro, detergentes, desinfectantes, aromatizantes y más — con entrega y pedido directo por WhatsApp.</p>
+        <div class="hero-botones">
+            <button class="btn-whatsapp-directo btn-primario" type="button">
+                <span>Pedir por WhatsApp</span> 💬
             </button>
-
+            <a href="#productos" class="btn-secundario">Ver catálogo</a>
         </div>
+        <p class="hero-horario">🕒 <span id="horario-negocio">Lunes a Sábado · 8:00 AM – 7:00 PM</span></p>
+    </div>
+</section>
 
+<section id="productos" class="productos">
+    <div class="seccion-titulo">
+        <p class="eyebrow">Catálogo</p>
+        <h2>Nuestros productos</h2>
+        <p class="seccion-sub">Toca las categorías para explorar. Agrega lo que necesites y cotiza directo por WhatsApp.</p>
+    </div>
+
+    <div class="tabs" id="tabs" role="tablist" aria-label="Categorías de productos"></div>
+
+    <div class="grid-productos" id="grid-productos"></div>
+</section>
+
+<section id="ubicacion" class="ubicacion">
+    <div class="seccion-titulo">
+        <p class="eyebrow">Visítanos</p>
+        <h2>Encuéntranos</h2>
+        <p class="seccion-sub">Escribe cualquier dirección para ubicarte y calcular qué tan cerca estás.</p>
+    </div>
+
+    <div class="direccion-box">
+        <input
+            type="text"
+            id="direccion"
+            placeholder="Escribe una dirección, colonia o punto de referencia">
+        <button id="btn-buscar-direccion" type="button">Buscar</button>
+    </div>
+
+    <div class="mapa-envoltura">
         <iframe
             id="mapa"
-            src="https://maps.google.com/maps?q=Villahermosa%20Tabasco&output=embed"
-            loading="lazy">
+            title="Mapa de ubicación"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
         </iframe>
+    </div>
+</section>
 
-    </section>
+<section id="contacto" class="contacto">
+    <div class="contacto-tarjeta">
+        <p class="eyebrow">¿Listo para tu pedido?</p>
+        <h2>Escríbenos y cotizamos al instante</h2>
+        <p>Respondemos directo por WhatsApp, sin filas ni esperas.</p>
+        <button class="btn-whatsapp-directo btn-primario" type="button">
+            <span>Contactar por WhatsApp</span> 💬
+        </button>
+        <p class="contacto-telefono">📱 WhatsApp: <span class="telefono-visible"></span></p>
+    </div>
+</section>
 
-    <section id="contacto" class="contacto">
+<footer class="footer">
+    <p>© 2026 <span id="nombre-negocio-footer">LimpioMax</span> · Productos de Limpieza</p>
+</footer>
 
-        <h2>Haz tu pedido ahora</h2>
+<!-- Barra flotante de cotización (visible cuando hay productos agregados) -->
+<button class="barra-cotizacion" id="barra-cotizacion" type="button" aria-label="Abrir cotización" aria-haspopup="dialog">
+    <span class="barra-icono">🧺</span>
+    <span class="barra-texto">
+        <span id="contador-articulos">0</span> producto(s) agregados
+    </span>
+    <span class="barra-total" id="total-barra">$0</span>
+</button>
 
-        <a
-            href="https://wa.me/529991234567?text=Hola,%20quiero%20cotizar%20productos%20de%20limpieza"
-            target="_blank"
-            class="btn-whatsapp">
-            Contactar por WhatsApp
-        </a>
+<!-- Panel deslizante de cotización -->
+<div class="panel-cotizacion" id="panel-cotizacion" role="dialog" aria-label="Tu cotización" aria-hidden="true">
+    <div class="panel-header">
+        <h3>Tu cotización</h3>
+        <button id="btn-cerrar-cotizacion" class="btn-cerrar" type="button" aria-label="Cerrar">✕</button>
+    </div>
 
-    </section>
+    <div class="panel-lista" id="lista-cotizacion"></div>
 
-    <footer>
-        <p>© 2026 LimpioMax - Productos de Limpieza</p>
-    </footer>
+    <p class="aviso-envio" id="aviso-envio"></p>
 
-    <script src="script.js"></script>
+    <div class="panel-footer">
+        <div class="panel-total">
+            <span>Total</span>
+            <span id="total-panel">$0</span>
+        </div>
+        <button class="btn-primario btn-cotizar" id="btn-enviar-cotizacion" type="button">
+            Enviar cotización por WhatsApp 💬
+        </button>
+    </div>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
